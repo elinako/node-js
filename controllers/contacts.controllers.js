@@ -51,8 +51,8 @@ class ContactsController {
     return res.status(200).send({ message: "contact deleted" });
   }
 
-  validateCreateContact(res, req, next) {
-    const validationRules = Joi.object({
+  validateCreateContact(req, res, next) {
+    const validationRules = Joi.object().keys({
       name: Joi.string().required(),
       email: Joi.string().required(),
       phone: Joi.string().required(),
