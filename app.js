@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const Joi = require("joi");
 const contactsRouter = require("./contacts/contact.routes");
+const userRouter = require("./users/user.routes");
 
 require("dotenv").config();
 
@@ -31,6 +32,7 @@ class ContactsServer {
 
   initRoutes() {
     this.server.use("/api/contacts", contactsRouter);
+    this.server.use("/auth", userRouter);
   }
 
   async initDataBase() {

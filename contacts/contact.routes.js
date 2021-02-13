@@ -9,6 +9,7 @@ contactsRouter.post(
   ContactsController.validateCreateContact,
   ContactsController.createContact
 );
+
 contactsRouter.get(
   "/:contactId",
   ContactsController.validateId,
