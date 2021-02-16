@@ -62,7 +62,7 @@ class UserController {
       }
 
       const token = await jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: 2 * 24 * 60 * 60, // 2 days
+        expiresIn: "2 days", // 2 days
       });
 
       await UserModel.updateToken(user._id, token);
